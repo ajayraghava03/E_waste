@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Waste Challenge 🌿</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+  html{scroll-behavior:smooth;}
+  body{background:#f8fafc;color:#0f172a;overflow-x:hidden;}
+  nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);
+      display:flex;justify-content:space-between;align-items:center;padding:14px 40px;z-index:50;
+      box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+  nav h1{font-weight:800;font-size:22px;color:#16a34a;}
+  nav a{margin:0 10px;text-decoration:none;color:#0f172a;font-weight:600;transition:.3s;}
+  nav a:hover{color:#16a34a;}
+  section{min-height:100vh;padding:90px 20px;text-align:center;}
+  /* Hero */
+  #home{background:linear-gradient(135deg,#16a34a,#10b981,#84cc16);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  #home h2{font-size:3rem;font-weight:800;margin-bottom:10px;}
+  #home p{max-width:600px;font-size:1.2rem;}
+  #home button{margin-top:30px;padding:12px 30px;border:none;border-radius:8px;background:white;color:#16a34a;font-weight:600;font-size:1rem;cursor:pointer;}
+  #home button:hover{background:#f1f5f9;}
+  /* About */
+  #about{background:#fef9c3;padding-top:120px;}
+  #about h2{color:#ca8a04;margin-bottom:20px;}
+  #about p{max-width:700px;margin:20px auto;line-height:1.6;}
+  /* Features */
+  #features{background:#e0f2fe;padding-top:120px;}
+  #features h2{color:#0284c7;margin-bottom:20px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:30px;}
+  .card{background:white;border-radius:12px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+  .card h3{margin-bottom:8px;}
+  /* Register */
+  #register{background:#fef2f2;padding-top:120px;}
+  #register h2{color:#dc2626;margin-bottom:20px;}
+  form{max-width:500px;margin:0 auto;text-align:left;}
+  label{display:block;margin-top:15px;font-weight:600;}
+  input,select{width:100%;padding:10px;border-radius:8px;border:1px solid #d1d5db;}
+  button.btn{width:100%;margin-top:20px;padding:12px;border:none;border-radius:8px;background:#dc2626;color:white;font-weight:600;cursor:pointer;}
+  button.btn:hover{background:#b91c1c;}
+  ul{list-style:none;padding-left:0;margin-top:20px;}
+  li{background:#fff;margin:6px 0;padding:10px;border-radius:8px;font-size:14px;}
+  /* Quiz */
+  #quiz{background:#f0fdf4;padding-top:120px;}
+  #quiz h2{color:#15803d;margin-bottom:10px;}
+  #quiz p{margin-bottom:20px;}
+  #quiz button.start{background:#16a34a;color:white;border:none;padding:12px 30px;border-radius:8px;font-weight:600;cursor:pointer;font-size:1rem;}
+  #quiz button.start:hover{background:#15803d;}
+  /* Modal Quiz */
+  #modal-root{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;z-index:100;}
+  #modal{background:linear-gradient(135deg,#bbf7d0,#86efac,#4ade80);padding:30px;border-radius:16px;max-width:500px;width:90%;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,0.15);animation:fadeIn .4s ease;}
+  #modal h3{font-size:1.3rem;margin-bottom:16px;color:#064e3b;}
+  #modal .option{display:block;width:100%;padding:12px;margin:8px 0;background:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;color:#065f46;transition:0.3s;}
+  #modal .option:hover{background:#d1fae5;}
+  #modal .score{font-size:1.3rem;margin-top:10px;color:#065f46;}
+  #modal .close{margin-top:20px;padding:10px 22px;background:#16a34a;color:white;border:none;border-radius:8px;font-weight:600;cursor:pointer;}
+  #modal .close:hover{background:#15803d;}
+  @keyframes fadeIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);} }
+  /* Contact */
+  #contact{background:#eef2ff;padding-top:120px;}
+  #contact h2{color:#4f46e5;margin-bottom:10px;}
+  footer{text-align:center;padding:20px;background:#16a34a;color:white;font-size:14px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>🌿 E-Waste</h1>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#register">Register</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="home">
+  <h2>Clean Tech, Green Future</h2>
+  <p>Join the movement to collect and recycle electronic waste responsibly.</p>
+  <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Learn More ↓</button>
+</section>
+
+<section id="about">
+  <h2>About the Project</h2>
+  <p>The E-Waste Challenge is a digital initiative aimed at promoting sustainable electronics disposal. Through awareness, tracking, and participation, schools and colleges can actively contribute to reducing electronic waste, protecting the environment, and creating a cleaner, greener future.</p>
+  <p>Our platform helps institutions log and manage e-waste collection while encouraging students and staff to understand the importance of responsible recycling. By connecting educational institutions nationwide, we are building a community focused on environmental responsibility.</p>
+  <p>Join us in making a measurable impact—one gadget at a time!</p>
+</section>
+
+<section id="features">
+  <h2>Our Features</h2>
+  <div class="grid">
+    <div class="card" style="border-top:5px solid #16a34a">
+      <h3>♻️ Smart Tracking</h3>
+      <p>Easily log e-waste collection and monitor progress with visual dashboards. Track your environmental impact.</p>
+    </div>
+    <div class="card" style="border-top:5px solid #0284c7">
+      <h3>🏫 Institutions Hub</h3>
+      <p>Register multiple schools and colleges. Each institution maintains its own records for seamless reporting.</p>
+    </div>
+    <div class="card" style="border-top:5px solid #ca8a04">
+      <h3>📊 Analytics & Insights</h3>
+      <p>Track trends in e-waste by category and weight. Generate reports to visualize your impact over time.</p>
+    </div>
+    <div class="card" style="border-top:5px solid #dc2626">
+      <h3>🧠 Learn & Earn</h3>
+      <p>Engage students with quizzes and challenges about e-waste. Earn badges and certificates!</p>
+    </div>
+    <div class="card" style="border-top:5px solid #f97316">
+      <h3>🌍 Community Impact</h3>
+      <p>Connect with other institutions and contribute to a nationwide movement toward sustainable electronics management.</p>
+    </div>
+    <div class="card" style="border-top:5px solid #8b5cf6">
+      <h3>🔔 Alerts & Reminders</h3>
+      <p>Receive notifications for collection drives, deadlines, and sustainability events to stay proactive.</p>
+    </div>
+  </div>
+</section>
+
+<section id="register">
+  <h2>Register Institution</h2>
+  <form id="regForm">
+    <label>Institution Name</label>
+    <input id="instName" placeholder="e.g. Green Valley High School" required>
+    <label>City / Town</label>
+    <input id="instCity" placeholder="e.g. Hyderabad">
+    <button type="submit" class="btn">Register</button>
+  </form>
+  <ul id="instList"></ul>
+
+  <h2 style="margin-top:40px;">Log Collection</h2>
+  <form id="collectForm">
+    <label>Institution</label>
+    <select id="instSelect"></select>
+    <label>Weight (kg)</label>
+    <input type="number" step="0.1" min="0.1" id="kg" required>
+    <label>Category</label>
+    <select id="category">
+      <option>Small Electronics</option>
+      <option>Large Appliances</option>
+      <option>Batteries</option>
+      <option>Mixed</option>
+    </select>
+    <button type="submit" class="btn">Add Collection</button>
+  </form>
+  <ul id="collectList"></ul>
+</section>
+
+<section id="quiz">
+  <h2>Eco Quiz 🌱</h2>
+  <p>Test your knowledge and learn about e-waste recycling!</p>
+  <button class="start" onclick="openQuiz()">Start Quiz</button>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Have questions or suggestions? Reach us at <b>support@ewastechallenge.org</b></p>
+</section>
+
+<footer>© 2025 E-Waste Challenge • Designed for a Cleaner Future 🌍</footer>
+
+<div id="modal-root"><div id="modal"></div></div>
+
+<script>
+// Data Storage
+const data = JSON.parse(localStorage.getItem('ewaste_demo_simple') || '{"institutions":[],"collections":[]}');
+function save(){localStorage.setItem('ewaste_demo_simple',JSON.stringify(data));update();}
+const instList=document.getElementById('instList');
+const instSelect=document.getElementById('instSelect');
+const collectList=document.getElementById('collectList');
+
+// Register Institution
+document.getElementById('regForm').onsubmit=e=>{
+  e.preventDefault();
+  const name=document.getElementById('instName').value.trim();
+  const city=document.getElementById('instCity').value.trim();
+  if(!name)return alert('Enter name');
+  data.institutions.push({id:Date.now(),name,city});
+  e.target.reset();save();
+};
+
+// Log Collection
+document.getElementById('collectForm').onsubmit=e=>{
+  e.preventDefault();
+  if(!data.institutions.length)return alert('Register institution first');
+  data.collections.push({
+    instId:instSelect.value,
+    kg:parseFloat(document.getElementById('kg').value),
+    category:document.getElementById('category').value
+  });
+  e.target.reset();save();
+};
+
+// Update UI
+function update(){
+  instList.innerHTML=data.institutions.map(i=>`<li>${i.name} (${i.city||''})</li>`).join('')||'<li>No institutions yet</li>';
+  instSelect.innerHTML=data.institutions.map(i=>`<option value="${i.id}">${i.name}</option>`).join('');
+  collectList.innerHTML=data.collections.map(c=>{
+    const inst=data.institutions.find(i=>i.id==c.instId)?.name||'Unknown';
+    return `<li>${inst}: ${c.kg} kg — ${c.category}</li>`;
+  }).join('')||'<li>No collections yet</li>';
+}
+update();
+
+// Quiz
+function openQuiz(){
+  const q=[
+    {q:'What is e-waste?',a:['Plastic waste','Electronic waste','Food waste'],correct:1},
+    {q:'Which component of a computer can be recycled?',a:['CPU','RAM','All of the above'],correct:2},
+    {q:'Which metal is commonly found in e-waste?',a:['Gold','Iron','Tin'],correct:0},
+    {q:'Where should e-waste be disposed?',a:['General bin','E-waste collection center','Water body'],correct:1},
+    {q:'Why recycle e-waste?',a:['To reduce pollution','To waste time','To burn items'],correct:0}
+  ];
+  let score=0,i=0;
+  const modalRoot=document.getElementById('modal-root'),modal=document.getElementById('modal');
+  function renderQ(){
+    const curr=q[i];
+    modal.innerHTML=`<h3>Q${i+1}: ${curr.q}</h3>${curr.a.map((x,idx)=>`<button class='option' onclick='choose(${idx})'>${x}</button>`).join('')}`;
+  }
+  window.choose=function(idx){
+    if(idx===q[i].correct)score++;
+    i++;
+    if(i<q.length)renderQ();
+    else modal.innerHTML=`<h3>🎉 Quiz Completed!</h3><div class='score'>Your Score: ${score}/${q.length}</div><button class='close' onclick='closeModal()'>Close</button>`;
+  };
+  modalRoot.style.display='flex';renderQ();
+}
+function closeModal(){document.getElementById('modal-root').style.display='none';}
+</script>
+
+</body>
+</html>
